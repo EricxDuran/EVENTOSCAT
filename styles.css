@@ -86,13 +86,15 @@ main {
 
 /* Estilo para centrar la imagen y mantener el tamaño original */
 /* Estilo para centrar la imagen y mantener el tamaño original */
+/* Estilo para centrar la imagen y mantener el tamaño original */
 .event-poster {
     display: block;
     margin: 0 auto; /* Centrar horizontalmente */
     max-width: 100%; /* Asegurarse de que no se salga del contenedor */
     height: auto; /* Mantener proporciones de la imagen */
-    max-height: 300px; /* Ajustar este valor según sea necesario */
+    width: 80%; /* O establecer un ancho fijo, como 300px */
 }
+
 
 
 .fixed-events {
