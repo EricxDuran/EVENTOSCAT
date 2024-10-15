@@ -1,0 +1,104 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px; /* Espacio para la barra de navegación */
+}
+
+header {
+    background-color: #8B0000; /* Rojo oscuro */
+    width: 100%;
+    padding: 20px 0; /* Aumentar grosor de la barra de navegación */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.nav-menu li {
+    position: relative; /* Para permitir el uso de pseudo-elementos */
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px; /* Aumentar padding para hacerlo más grueso */
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+}
+
+.nav-menu li a:hover {
+    background-color: #FF8C00; /* Naranja */
+    transform: translateY(-2px); /* Efecto de sobresalto */
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.event-wrapper {
+    text-align: center;
+    width: 80%;
+    margin-top: 0.3%; /* Ajusta la distancia debajo de la barra de navegación */
+}
+
+.event-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.event-info, .event-poster {
+    width: 45%;
+    border: 2px solid #8B0000; /* Borde rojo oscuro */
+    padding: 15px;
+    background-color: #fff;
+}
+
+.event-info h3 {
+    margin-bottom: 10px;
+    background-color: wheat;
+}
+
+.event-info p {
+    margin-top: 10px;
+}
+
+.event-poster img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.event-title {
+    background-color: wheat;
+    font-size: 2.5em; /* Tamaño más grande */
+    font-weight: bold; /* Negrita */
+    font-style: italic; /* Cursiva */
+    text-align: center; /* Centrar el texto */
+    color: #8B0000; /* Color rojo oscuro, puedes cambiarlo si lo deseas */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
