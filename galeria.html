@@ -19,9 +19,46 @@
             overflow-x: hidden;
         }
 
-        .slider {
+        .content {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
             width: 90%;
             max-width: 1200px;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #fff;
+            border: 2px solid #8B0000;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            color: #8B0000;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .sidebar ul li {
+            cursor: pointer;
+            padding: 8px 0;
+            color: #333;
+        }
+
+        .sidebar ul li:hover {
+            color: #8B0000;
+            text-decoration: underline;
+        }
+
+        .slider {
+            width: 80%;
             position: relative;
             overflow: hidden;
             border: 2px solid #8B0000;
@@ -85,6 +122,15 @@
             width: 100%;
             height: 100%;
         }
+
+        .event-title {
+            background-color: wheat;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -97,52 +143,66 @@
             </ul>
         </nav>
     </header>
+    <h2 class="event-title">Quieres tu foto aqui? Contacta con Eric (@samurai_1.3_bcn) por instagram, apartado <a href="RRSS.html">Redes Sociales</a></h2>
 
     <main>
-        <div class="slider">
-            <div class="slides" id="slides">
-                <div class="slide">
-                    <img src="GALERIA/golfvr6.jfif" alt="Golf VR6">
-                    <div class="description">
-                        <h3>Golf VR6: El Clásico Moderno</h3>
-                        <p>Un icono en el mundo automovilístico, el Golf VR6 combina un diseño atemporal con un potente motor de seis cilindros, ofreciendo una experiencia de conducción inigualable.</p>
-                    </div>
-                    </a>
-                </div>
-                <div class="slide">
-                    <img src="GALERIA/volvo360.jfif" alt="Volvo 360 GLT">
-                    <div class="description">
-                        <h3>Volvo 360 GLT: Elegancia y Fiabilidad Sueca</h3>
-                        <p>El Volvo 360 GLT es un clásico de la década de los 80 que destaca por su diseño robusto y elegante, combinado con un motor ágil y eficiente. Conocido por su fiabilidad y durabilidad, este modelo ofrece una experiencia de conducción segura y confortable, ideal tanto para la ciudad como para viajes largos. Un auténtico símbolo de la ingeniería sueca.</p>
-                    </div>
-                    <a href="https://www.instagram.com/polvalles__/" target="_blank" class="instagram-link">
-                        <img src="GALERIA/instagram.webp" alt="Instagram Logo">
-                    </a>
-                </div>
-                <div class="slide">
-                    <img src="GALERIA/SUZUKI.png" alt="Suzuki">
-                    <div class="description">
-                        <h3>Suzuki: Fiabilidad y Versatilidad</h3>
-                        <p>Suzuki ofrece una gama de vehículos accesibles y fiables, perfectos tanto para la ciudad como para aventuras fuera de carretera.</p>
-                    </div>
-                    <a href="https://www.instagram.com/samurai_1.3_bcn/" target="_blank" class="instagram-link">
-                        <img src="GALERIA/instagram.webp" alt="Instagram Logo">
-                    </a>
-                </div>
-                <div class="slide">
-                    <img src="GALERIA/e30.png" alt="BMWe30">
-                    <div class="description">
-                        <h3>BMW E30: Estilo y Rendimiento Alemán</h3>
-                        <p>El BMW E30 es un clásico de los años 80 y 90 que sobresale por su diseño deportivo y atemporal, junto con un motor potente y preciso. Reconocido por su agilidad y tracción trasera, este modelo brinda una experiencia de conducción emocionante y dinámica, ideal tanto para el uso urbano como para los tramos más desafiantes en carretera. Un verdadero icono de la ingeniería alemana.</p>
-                    </div>
-                    <a href="https://www.instagram.com/eirickr/" target="_blank" class="instagram-link">
-                        <img src="GALERIA/instagram.webp" alt="Instagram Logo">
-                    </a>
-                </div>
+        <div class="content">
+            <!-- Sidebar con la lista de coches -->
+            <div class="sidebar">
+                <h3>Coches en esta galería</h3>
+                <ul>
+                    <li onclick="showSlide(0)">Golf VR6</li>
+                    <li onclick="showSlide(1)">Volvo 360 GLT</li>
+                    <li onclick="showSlide(2)">Suzuki Samurai</li>
+                    <li onclick="showSlide(3)">BMW E30</li>
+                </ul>
             </div>
-            <div class="controls">
-                <button class="control" id="prev">&lt;</button>
-                <button class="control" id="next">&gt;</button>
+
+            <!-- Carrusel de imágenes -->
+            <div class="slider">
+                <div class="slides" id="slides">
+                    <div class="slide">
+                        <img src="GALERIA/golfvr6.jfif" alt="Golf VR6">
+                        <div class="description">
+                            <h3>Golf VR6: El Clásico Moderno</h3>
+                            <p>Un icono en el mundo automovilístico, el Golf VR6 combina un diseño atemporal con un potente motor de seis cilindros, ofreciendo una experiencia de conducción inigualable.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="GALERIA/volvo360.jfif" alt="Volvo 360 GLT">
+                        <div class="description">
+                            <h3>Volvo 360 GLT: Elegancia y Fiabilidad Sueca</h3>
+                            <p>El Volvo 360 GLT es un clásico de los 80, destacando por su diseño robusto y su motor ágil. Un símbolo de la ingeniería sueca.</p>
+                        </div>
+                        <a href="https://www.instagram.com/polvalles__/" target="_blank" class="instagram-link">
+                            <img src="GALERIA/instagram.webp" alt="Instagram Logo">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <img src="GALERIA/SUZUKI.png" alt="Suzuki">
+                        <div class="description">
+                            <h3>Suzuki: Fiabilidad y Versatilidad</h3>
+                            <p>Suzuki ofrece una gama de vehículos accesibles y fiables, perfectos tanto para la ciudad como para aventuras fuera de carretera.</p>
+                        </div>
+                        <a href="https://www.instagram.com/samurai_1.3_bcn/" target="_blank" class="instagram-link">
+                            <img src="GALERIA/instagram.webp" alt="Instagram Logo">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <img src="GALERIA/e30.png" alt="BMW E30">
+                        <div class="description">
+                            <h3>BMW E30: Estilo y Rendimiento Alemán</h3>
+                            <p>El BMW E30 es un clásico de los años 80 y 90 que sobresale por su diseño deportivo y motor potente. Un verdadero icono de la ingeniería alemana.</p>
+                        </div>
+                        <a href="https://www.instagram.com/eirickr/" target="_blank" class="instagram-link">
+                            <img src="GALERIA/instagram.webp" alt="Instagram Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="control" id="prev">&lt;</button>
+                    <button class="control" id="next">&gt;</button>
+                </div>
             </div>
         </div>
     </main>
