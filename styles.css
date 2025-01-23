@@ -1,0 +1,169 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px; /* Espacio para la barra de navegación */
+}
+
+header {
+    background-color: #8B0000; /* Rojo oscuro */
+    width: 100%;
+    padding: 20px 0; /* Aumentar grosor de la barra de navegación */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.nav-menu li {
+    position: relative; /* Para permitir el uso de pseudo-elementos */
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px; /* Aumentar padding para hacerlo más grueso */
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+}
+
+.nav-menu li a:hover {
+    background-color: #FF8C00; /* Naranja */
+    transform: translateY(-2px); /* Efecto de sobresalto */
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambiado a flex-start para que se mantenga el diseño */
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.highlighted-event, .calendar {
+    width: 45%;
+    border: 2px solid #8B0000; /* Borde rojo oscuro */
+    padding: 15px;
+}
+
+.highlighted-event h2, .calendar h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #8B0000; /* Rojo oscuro */
+    background-color: wheat; /* Cambiar a color wheat */
+    padding: 10px; /* Espaciado para que el fondo se vea bien */
+}
+
+/* Asegúrate de que el nombre del mes en el calendario no reciba el mismo estilo */
+.fc-toolbar h2 {
+    background-color: transparent; /* Asegurarse de que el fondo sea transparente */
+    color: #333; /* Color del texto como desees */
+}
+
+/* Estilo para centrar la imagen y mantener el tamaño original */
+/* Estilo para centrar la imagen y mantener el tamaño original */
+/* Estilo para centrar la imagen y mantener el tamaño original */
+.event-poster {
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente */
+    max-width: 100%; /* Asegurarse de que no se salga del contenedor */
+    height: auto; /* Mantener proporciones de la imagen */
+    width: 80%; /* O establecer un ancho fijo, como 300px */
+}
+
+
+
+.fixed-events {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #8B0000;
+}
+
+.fixed-events h2 {
+    font-size: 1.5em;
+    color: #8B0000;
+    margin-bottom: 15px;
+}
+
+.fixed-events-container {
+    display: flex;
+    justify-content: center; /* Cambiado a center para centrar los logos */
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.event-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Cambiar a columna para dispositivos más pequeños */
+        align-items: center; /* Centrar el contenido */
+    }
+
+    .highlighted-event, .calendar {
+        width: 90%; /* Hacer que los contenedores ocupen más ancho */
+        margin-bottom: 20px; /* Espacio entre los contenedores */
+    }
+
+    .fixed-events-container {
+        flex-direction: column; /* Cambiar a columna para móviles */
+        align-items: center; /* Centrar los logos */
+    }
+
+    .event-logo {
+        width: 50px; /* Disminuir el tamaño de los logos */
+        height: 50px; /* Disminuir el tamaño de los logos */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0; /* Disminuir el padding de la barra de navegación en móviles */
+    }
+
+    .nav-menu li a {
+        padding: 10px 15px; /* Ajustar el padding para móviles */
+    }
+
+    .fixed-events h2 {
+        font-size: 1.2em; /* Disminuir tamaño del texto en el título de eventos fijos */
+    }
+}

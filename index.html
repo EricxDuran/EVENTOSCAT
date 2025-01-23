@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS CAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="galeria.html">GALERIA</a></li>
+                <li><a href="RRSS.html">REDES SOCIALES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Barra de eventos fijos -->
+    <section class="fixed-events">
+        <h2>EVENTOS MENSUALES</h2>
+        <div class="fixed-events-container">
+            <a href="MENSUALES/montjuic.html">
+                <img src="GALERIA/montjuic.jfif" alt="XX Retro Clàssic" class="event-logo">
+            </a>
+            <a href="MENSUALES/viladecans.html">
+                <img src="GALERIA/viladecans.png" alt="10a TROBADA BEGUES" class="event-logo">
+            </a>
+            <a href="MENSUALES/maresme.html">
+                <img src="GALERIA/maresme.png" alt="COPA TIBIDABO" class="event-logo">
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <div class="content">
+            <!-- Sección de evento cercano -->
+            <div class="highlighted-event">
+                <h2><em>EVENTO CERCANO</em></h2>
+                <a href="KDDS/torrelles.html">
+                    <img src="POSTERS/torrelles.jpeg" alt="Póster de Evento" class="event-poster">
+                </a>
+            </div>
+
+            <!-- Sección de calendario -->
+            <div class="calendar">
+                <h2>CALENDARIO</h2>
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'es',
+                firstDay: 1,
+                events: [
+                    { title: "TORRELLES", date: '2025-01-26', url: 'KDDS/torrelles.html' },
+                    { title: "TOLRA", date: '2025-02-09', url: 'KDDS/tolra.html' },
+                    { title: "LL.VALLÈS", date: '2025-05-04', url: 'KDDS/llinars_del_valles.html' },
+                    { title: "ARBÚCIES", date: '2025-02-16', url: 'KDDS/arbucies.html' },
+                    { title: "RODES", date: '2025-02-01', url: 'KDDS/rodes.html' },
+                    { title: "MOGODA", date: '2025-03-22', url: 'KDDS/mogoda.html' },
+                    { title: "MAFUMET", date: '2025-02-02', url: 'KDDS/mafument.html' },
+                    { title: "SANT BARTOMEU DEL GRAU", date: '2025-02-23', url: 'KDDS/st_grau.html' },
+                    { title: "PALOL D'ONYAR", date: '2025-04-06', url: 'KDDS/palol_d_onyar.html' },
+
+
+                ],
+                eventClick: function (info) {
+                    window.location.href = info.event.url;
+                },
+                eventDidMount: function (info) {
+                    info.el.style.fontSize = '0.8em';
+                    info.el.style.overflow = 'hidden';
+                    info.el.style.whiteSpace = 'nowrap';
+                    info.el.style.textOverflow = 'ellipsis';
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+
+</html>
